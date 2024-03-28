@@ -1,0 +1,15 @@
+C:\Users\malya\C#-program\FileLest\FileLest\bin\Debug\net6.0\FileLest.exe
+C:\Users\malya\C#-program\FileLest\FileLest\bin\Debug\net6.0\FileLest.deps.json
+C:\Users\malya\C#-program\FileLest\FileLest\bin\Debug\net6.0\FileLest.runtimeconfig.json
+C:\Users\malya\C#-program\FileLest\FileLest\bin\Debug\net6.0\FileLest.dll
+C:\Users\malya\C#-program\FileLest\FileLest\bin\Debug\net6.0\FileLest.pdb
+C:\Users\malya\C#-program\FileLest\FileLest\obj\Debug\net6.0\FileLest.csproj.AssemblyReference.cache
+C:\Users\malya\C#-program\FileLest\FileLest\obj\Debug\net6.0\FileLest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malya\C#-program\FileLest\FileLest\obj\Debug\net6.0\FileLest.AssemblyInfoInputs.cache
+C:\Users\malya\C#-program\FileLest\FileLest\obj\Debug\net6.0\FileLest.AssemblyInfo.cs
+C:\Users\malya\C#-program\FileLest\FileLest\obj\Debug\net6.0\FileLest.csproj.CoreCompileInputs.cache
+C:\Users\malya\C#-program\FileLest\FileLest\obj\Debug\net6.0\FileLest.dll
+C:\Users\malya\C#-program\FileLest\FileLest\obj\Debug\net6.0\refint\FileLest.dll
+C:\Users\malya\C#-program\FileLest\FileLest\obj\Debug\net6.0\FileLest.pdb
+C:\Users\malya\C#-program\FileLest\FileLest\obj\Debug\net6.0\FileLest.genruntimeconfig.cache
+C:\Users\malya\C#-program\FileLest\FileLest\obj\Debug\net6.0\ref\FileLest.dll
