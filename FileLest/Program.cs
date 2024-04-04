@@ -1,9 +1,35 @@
 ﻿using System.Xml.Serialization;
 using System.IO;
 using System.Text;
-using System.Security.Cryptography.X509Certificates;
-using static System.Net.WebRequestMethods;
+using System.Diagnostics;
 
+struct DirectoryEmty
+{
+    public string name;
+    public bool empty;
+}
+
+class ListFile
+{
+    string filePath;
+
+    public ListFile(string path)
+    {
+        filePath = path;
+
+        if (!File.Exists(filePath))
+        {
+            File.Create(filePath);
+        }
+    }
+
+    public void WriteList(List<string> files)
+    {
+        File.WriteAllLines(filePath, files);
+    }
+
+
+}
 
 class DirPars
 {
@@ -31,25 +57,42 @@ class DirPars
             Console.WriteLine(s);
         }
     }
-    public void GetFiles()
+    public List<string> GetFiles()
     {
-        string[] files = Directory.GetFiles(mDirName);
-        foreach (string s in files)
-        {
-            Console.WriteLine("[F]   ");
-            Console.WriteLine(s);
-        }
+        string[] files = Directory.GetFiles(mDirName, "", SearchOption.AllDirectories);
+        List<string> list = new List<string>(files);
+
+        return list;
     }
 
-    public void GetDirectorys()
+    public List<DirectoryEmty> GetDirectorys()
     {
-        string[] dirs = Directory.GetDirectories(mDirName);
+        string[] dirs = Directory.GetDirectories(mDirName, "", SearchOption.AllDirectories);
+        List<DirectoryEmty> list = new List<DirectoryEmty>() ;
+
+        DirectoryEmty listItem;
+
         foreach (string s in dirs)
         {
-            Console.WriteLine("[D]   ");
-            Console.WriteLine(s);
+
+            listItem.name = s;
+
+            if (Directory.GetDirectories(s).Any())
+            {
+                listItem.empty = true;
+            }
+            else
+            {
+                listItem.empty = false;
+            }
+
+            list.Add(listItem);
+
         }
+
+        return list;
     }
+
 }
 
 static class Program
@@ -59,8 +102,9 @@ static class Program
 
     static int Main()
     {
+        var lisrtFile = new ListFile("C:\\Users\\malya\\C#-program\\FileLest\\C--_File_List\\ListFile.txt");
 
-        var dirPars = new DirPars("C:\\Users\\malya\\C#-program\\FileLest\\TestDirectory");
+        var dirPars = new DirPars("C:\\Users\\malya\\C#-program\\FileLest\\C--_File_List\\TestDirectory");
 
         dirPars.GetAllList();
 
@@ -69,6 +113,7 @@ static class Program
         dirPars.GetDirectorys();
 
 
+        lisrtFile.WriteList(dirPars.GetFiles());
 
 
         return 0;
